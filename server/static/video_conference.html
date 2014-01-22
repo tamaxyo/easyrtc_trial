@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Video Conference demo with easyRTC</title>
+
+		<link rel="stylesheet" type="text/css" href="lib/easyrtc/easyrtc.css" />
+		<script type="text/javascript" src="lib/socket.io/socket.io.js"></script>
+		<script type="text/javascript" src="lib/easyrtc/easyrtc.js"></script>
+		<script type="text/javascript" src="js/video_conference.js"></script>
+	</head>
+	<body>
+		<div id="otherClients"></div>
+		<video  style="float:left" id="self" width="300" height="200" muted="muted"></video>
+		<div style="position:relative;float:left;width:300px">
+			<video id="caller" width="300" height="200"></video>
+		</div>
+	</body>
+</html>

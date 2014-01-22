@@ -1,0 +1,15 @@
+{
+  "name": "easyrtc_trial",
+  "version": "0.0.1",
+  "description": "trial use of easyRTC",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "tamaxyo",
+  "dependencies": {
+    "easyrtc": "~1.0.7",
+    "socket.io": "~0.9.16",
+    "express": "~3.4.8"
+  }
+}
