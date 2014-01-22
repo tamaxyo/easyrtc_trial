@@ -10,6 +10,7 @@
   "dependencies": {
     "easyrtc": "~1.0.7",
     "socket.io": "~0.9.16",
-    "express": "~3.4.8"
+    "express": "~3.4.8",
+    "opts": "~1.2.2"
   }
 }
