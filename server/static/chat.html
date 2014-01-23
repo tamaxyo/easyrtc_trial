@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>chat</title>
+		<script type="text/javascript" src="lib/socket.io/socket.io.js"></script>
+		<script type="text/javascript" src="lib/easyrtc/easyrtc.js"></script>
+		<script type="text/javascript" src="js/chat.js"></script>
+	</head>
+	<body>
+		
+    <div id="main">
+      <div id="sendMessageArea">
+        <div id="iam">Obtaining ID...</div>
+        <textarea id="sendMessageText"></textarea>
+        <div id="otherClients"></div>
+      </div>
+			<hr />
+      <div id="receiveMessageArea">
+        Received Messages:
+        <div id="conversation"></div>	  
+      </div>
+    </div>
+	</body>
+</html>
