@@ -449,6 +449,10 @@ easyrtc.haveAudioVideo = {
 easyrtc.dataEnabled = false;
 /** @private */
 easyrtc.serverPath = null;
+
+easyrtc.serverOption = {
+  'connect timeout': 10000
+};
 /** @private */
 easyrtc.roomOccupantListener = null;
 /** @private */
@@ -1472,6 +1476,10 @@ easyrtc.setSocketUrl = function(socketUrl) {
     }
     easyrtc.serverPath = socketUrl;
 };
+
+easyrtc.setSocketResource = function(resource) {
+    easyrtc.serverOption['resource'] = resource;
+}
 /**
  * Sets the user name associated with the connection.
  * @param {String} username must obey standard identifier conventions.
@@ -2945,9 +2953,7 @@ easyrtc.connect = function(applicationName, successCallback, errorCallback) {
     function connectToWSServer(successCallback, errorCallback) {
 
         if (!easyrtc.webSocket) {
-            easyrtc.webSocket = io.connect(easyrtc.serverPath, {
-                'connect timeout': 10000
-            });
+            easyrtc.webSocket = io.connect(easyrtc.serverPath, easyrtc.serverOption);
             if (!easyrtc.webSocket) {
                 throw "io.connect failed";
             }
