@@ -29,13 +29,20 @@ var httpApp = express();
 httpApp.configure(function() {
   httpApp.get('/js/resource.js', function(req, res) {
     res.setHeader('Content-Type', 'text/javascript');
-    res.send('(function() { easyrtc.setSocketResource("' + resource + '")})(window)');
+    if(resource !== '') {
+      res.send('(function() { easyrtc.setSocketResource("' + resource + '")})(window)');
+    }
+    else {
+      res.end();
+    }
   });
   httpApp.use(express.static(__dirname + '/static/'));
 });
 
 var webServer = http.createServer(httpApp).listen(port);
 var socketServer = io.listen(webServer, { 'log level': 1 });
-socketServer.set('resource', '/' + resource);
+if(resource !== ''){
+  socketServer.set('resource', '/' + resource);
+}
 var rtc = easyrtc.listen(httpApp, socketServer);
 
