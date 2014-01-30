@@ -46,3 +46,7 @@ if(resource !== ''){
 }
 var rtc = easyrtc.listen(httpApp, socketServer);
 
+easyrtc.events.on("easyrtcMsg", function(connection, msg, socketCallback, next){
+  console.log("message from client", msg);
+  easyrtc.events.emitDefault("easyrtcMsg", connection, msg, socketCallback, next);
+});
